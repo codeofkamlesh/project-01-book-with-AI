@@ -1,0 +1,326 @@
+openapi: 3.0.0
+info:
+  title: Book Chapter Validation API
+  description: API for validating book chapters, code examples, and simulation environments
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+paths:
+  /chapters/{chapterId}/validate:
+    post:
+      summary: Validate a book chapter and its components
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "001-ros2-foundations"
+          description: The ID of the chapter to validate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                validateCodeExamples:
+                  type: boolean
+                  default: true
+                  description: Whether to validate code examples in the chapter
+                validateDiagrams:
+                  type: boolean
+                  default: true
+                  description: Whether to validate diagrams in the chapter
+                validateSimulations:
+                  type: boolean
+                  default: false
+                  description: Whether to validate simulation environments (resource intensive)
+              example:
+                validateCodeExamples: true
+                validateDiagrams: true
+                validateSimulations: false
+      responses:
+        '200':
+          description: Validation completed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapterId:
+                    type: string
+                    example: "001-ros2-foundations"
+                  status:
+                    type: string
+                    enum: [valid, invalid, error]
+                    example: "valid"
+                  results:
+                    type: object
+                    properties:
+                      codeExamples:
+                        type: object
+                        properties:
+                          total:
+                            type: integer
+                            example: 5
+                          passed:
+                            type: integer
+                            example: 5
+                          failed:
+                            type: integer
+                            example: 0
+                      diagrams:
+                        type: object
+                        properties:
+                          total:
+                            type: integer
+                            example: 3
+                          valid:
+                            type: integer
+                            example: 3
+                      simulations:
+                        type: object
+                        properties:
+                          total:
+                            type: integer
+                            example: 2
+                          loaded:
+                            type: integer
+                            example: 2
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        component:
+                          type: string
+                          example: "publisher_subscriber.py"
+                        type:
+                          type: string
+                          enum: [code, diagram, simulation]
+                        status:
+                          type: string
+                          enum: [passed, failed, skipped]
+                        message:
+                          type: string
+                          example: "Code executed successfully"
+        '404':
+          description: Chapter not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Chapter not found"
+  /examples/{exampleId}/run:
+    post:
+      summary: Run a specific code example
+      parameters:
+        - name: exampleId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "ros2-publisher-subscriber"
+          description: The ID of the code example to run
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                timeout:
+                  type: integer
+                  default: 30
+                  description: Timeout in seconds
+                environment:
+                  type: string
+                  enum: [default, simulation, ros2, isaac, vla]
+                  default: default
+                  description: Execution environment
+              example:
+                timeout: 30
+                environment: ros2
+      responses:
+        '200':
+          description: Example executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exampleId:
+                    type: string
+                    example: "ros2-publisher-subscriber"
+                  status:
+                    type: string
+                    enum: [success, timeout, error]
+                  output:
+                    type: string
+                    example: "Published message: Hello World"
+                  executionTime:
+                    type: number
+                    format: float
+                    example: 2.345
+                  resources:
+                    type: object
+                    properties:
+                      cpuTime:
+                        type: number
+                        format: float
+                        example: 1.2
+                      memoryUsed:
+                        type: integer
+                        example: 52428800
+        '404':
+          description: Example not found
+  /simulations/{envId}/validate:
+    post:
+      summary: Validate a simulation environment
+      parameters:
+        - name: envId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "gazebo-humanoid-world"
+          description: The ID of the simulation environment to validate
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                duration:
+                  type: integer
+                  default: 10
+                  description: Duration to run simulation in seconds
+                validatePhysics:
+                  type: boolean
+                  default: true
+                  description: Whether to validate physics behavior
+                validateSensors:
+                  type: boolean
+                  default: true
+                  description: Whether to validate sensor outputs
+              example:
+                duration: 10
+                validatePhysics: true
+                validateSensors: true
+      responses:
+        '200':
+          description: Simulation validation completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  envId:
+                    type: string
+                    example: "gazebo-humanoid-world"
+                  status:
+                    type: string
+                    enum: [valid, invalid, error]
+                  results:
+                    type: object
+                    properties:
+                      loaded:
+                        type: boolean
+                        example: true
+                      physicsValid:
+                        type: boolean
+                        example: true
+                      sensorsValid:
+                        type: boolean
+                        example: true
+                      performance:
+                        type: object
+                        properties:
+                          avgFps:
+                            type: number
+                            format: float
+                            example: 59.8
+                          stability:
+                            type: string
+                            enum: [high, medium, low]
+                            example: "high"
+        '404':
+          description: Simulation environment not found
+  /vlapipelines/{pipelineId}/execute:
+    post:
+      summary: Execute a VLA pipeline with a natural language prompt
+      parameters:
+        - name: pipelineId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "vla-pick-object"
+          description: The ID of the VLA pipeline to execute
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+              properties:
+                prompt:
+                  type: string
+                  example: "Pick up the red cube from the table"
+                  description: Natural language command for the robot
+                timeout:
+                  type: integer
+                  default: 60
+                  description: Maximum execution time in seconds
+                simulation:
+                  type: boolean
+                  default: true
+                  description: Whether to run in simulation environment
+              example:
+                prompt: "Pick up the red cube from the table"
+                timeout: 60
+                simulation: true
+      responses:
+        '200':
+          description: VLA pipeline executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pipelineId:
+                    type: string
+                    example: "vla-pick-object"
+                  prompt:
+                    type: string
+                    example: "Pick up the red cube from the table"
+                  status:
+                    type: string
+                    enum: [success, partial, failed, timeout]
+                  actionSequence:
+                    type: array
+                    items:
+                      type: string
+                    example: ["approach_object", "grasp_object", "lift_object"]
+                  confidence:
+                    type: number
+                    format: float
+                    minimum: 0.0
+                    maximum: 1.0
+                    example: 0.87
+                  executionTime:
+                    type: number
+                    format: float
+                    example: 15.23
+        '400':
+          description: Invalid prompt or parameters
+        '404':
+          description: VLA pipeline not found

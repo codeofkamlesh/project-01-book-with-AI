@@ -1,0 +1,43 @@
+# Isaac Sim configuration for a simple robot
+
+realsense:
+  enable: true
+  resolution: [640, 480]
+  frequency: 30
+
+robot:
+  urdf_path: "../../../simulation/models/simple_robot.urdf"
+  position: [0, 0, 0.5]
+  orientation: [0, 0, 0, 1]
+
+sensors:
+  camera:
+    enable: true
+    position: [0.2, 0, 0.1]  # Position relative to robot base
+    orientation: [0, 0, 0]   # Orientation in Euler angles (roll, pitch, yaw)
+    resolution: [640, 480]
+    fov: 90
+
+  lidar:
+    enable: true
+    position: [0.1, 0, 0.2]
+    rotation_frequency: 10
+    points_per_second: 500000
+    horizontal_samples: 640
+    vertical_samples: 32
+    range: [0.1, 25.0]
+
+simulation:
+  gravity: [0, 0, -9.81]
+  time_step: 0.001
+  duration: 10.0  # seconds
+
+environment:
+  lighting: "default"
+  textures: "realistic"
+  physics_engine: "PhysX"
+
+isaac_ros:
+  enable_bridge: true
+  namespace: "isaac_ros"
+  bridge_config: "default"
