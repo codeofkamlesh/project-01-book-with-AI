@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch --all --prune)",
+      "Bash(pwsh -File \".specify/scripts/powershell/create-new-feature.ps1\" -Json -Number 1 -ShortName \"ros2-foundations\" \"/sp.specify — Model 1: ROS 2 Foundations\n\nTarget audience:\nBeginners learning robotic software architecture and message-passing systems.\n\nFocus:\nCore ROS 2 concepts—nodes, topics, services, actions, parameters, packages, workspaces—and building the foundational control stack required for humanoid robotics.\n\nSuccess criteria:\n\nExplains ROS 2 architecture clearly (DDS, nodes, pub/sub)\n\nIncludes 3–5 runnable ROS 2 examples\n\nReader can build and run a basic control node\n\nAll claims verified with official ROS 2 documentation\n\nDiagrams draw.io compatible\n\nConstraints:\n\nFormat: Docusaurus Markdown\n\nMax chapter length: 1,500 words\n\nMust include at least one launch file and one custom message example\n\nSources: ROS 2 official docs + robotics papers (last 10 years)\n\nTimeline: Hackathon window\n\nNot building:\n\nLow-level DDS implementation details\n\nHardware-specific drivers\n\nRobot-arm kinematics or advanced control theory\n\nReal-world robot setup instructions\")",
+      "Bash(npx docusaurus build)",
+      "Bash(python -c \"\nimport os\nfrom pathlib import Path\n\n# Check that main documentation files exist and are readable\ndocs_to_check = [\n    ''docusaurus/docs/intro.md'',\n    ''docusaurus/docs/ros2-foundations/index.md'',\n    ''docusaurus/docs/simulation/index.md'',\n    ''docusaurus/docs/nvidia-isaac/index.md'',\n    ''docusaurus/docs/vla-humanoids/index.md'',\n    ''docusaurus/docs/integration/index.md''\n]\n\nall_good = True\nfor doc_path in docs_to_check:\n    if not Path(doc_path).exists():\n        print(f''Missing: {doc_path}'')\n        all_good = False\n    else:\n        size = Path(doc_path).stat().st_size\n        print(f''Found: {doc_path} ({size} bytes)'')\n\nif all_good:\n    print(''\\nAll documentation files are present!'')\nelse:\n    print(''\\nSome documentation files are missing!'')\n\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
