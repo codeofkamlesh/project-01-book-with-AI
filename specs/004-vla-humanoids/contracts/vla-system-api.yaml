@@ -1,0 +1,607 @@
+openapi: 3.0.0
+info:
+  title: Vision-Language-Action (VLA) System API
+  description: API for the Vision-Language-Action system that enables humanoid robots to understand human speech, interpret visual scenes, plan actions, and execute tasks.
+  version: 1.0.0
+  contact:
+    name: Physical AI & Humanoid Robotics Program
+    email: robotics@physical-ai.org
+
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+  - url: https://vla-api.physical-ai.org
+    description: Production server
+
+paths:
+  /voice-command:
+    post:
+      summary: Process a voice command and generate robot action
+      description: Accepts a voice command, processes it through speech-to-text, LLM planning, and generates executable robot actions.
+      operationId: processVoiceCommand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoiceCommandRequest'
+            example:
+              audio_data: "base64_encoded_audio"
+              robot_id: "H1-001"
+              session_id: "session_123"
+      responses:
+        '200':
+          description: Successfully processed voice command and generated action plan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoiceCommandResponse'
+              example:
+                status: "success"
+                action_plan: ["navigate_to_kitchen", "identify_red_cup", "grasp_object"]
+                confidence: 0.89
+                execution_time: 2.45
+        '400':
+          description: Invalid request or unsupported command
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error during processing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /perception/visual-scene:
+    get:
+      summary: Get current visual scene interpretation
+      description: Returns the current interpretation of the visual scene including object detection and scene understanding.
+      operationId: getVisualScene
+      parameters:
+        - name: robot_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the robot whose scene to interpret
+        - name: include_depth
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Whether to include depth information
+      responses:
+        '200':
+          description: Current visual scene interpretation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VisualSceneResponse'
+        '400':
+          description: Invalid robot ID or parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /planning/cognitive:
+    post:
+      summary: Generate cognitive plan from high-level command
+      description: Takes a high-level command and generates a multi-step cognitive plan for humanoid robot execution.
+      operationId: generateCognitivePlan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CognitivePlanRequest'
+      responses:
+        '200':
+          description: Successfully generated cognitive plan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CognitivePlanResponse'
+        '400':
+          description: Invalid command or unsupported task
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error in LLM processing or planning
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /robot/{robotId}/execute:
+    post:
+      summary: Execute action plan on robot
+      description: Sends an action plan to a specific robot for execution.
+      operationId: executeActionPlan
+      parameters:
+        - name: robotId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the robot to execute the plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionPlanRequest'
+      responses:
+        '200':
+          description: Action plan accepted for execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecutionResponse'
+        '400':
+          description: Invalid action plan or robot not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Robot not ready for execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /simulation/run:
+    post:
+      summary: Run simulation with VLA pipeline
+      description: Executes the complete VLA pipeline in simulation environment.
+      operationId: runVLASimulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SimulationRequest'
+      responses:
+        '200':
+          description: Simulation completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimulationResponse'
+        '400':
+          description: Invalid simulation parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    VoiceCommandRequest:
+      type: object
+      required:
+        - audio_data
+        - robot_id
+      properties:
+        audio_data:
+          type: string
+          description: Base64 encoded audio data
+          example: "UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoAAAAA"
+        robot_id:
+          type: string
+          description: ID of the target robot
+          example: "H1-001"
+        session_id:
+          type: string
+          description: Optional session identifier
+          example: "session_123"
+        language:
+          type: string
+          description: Language of the command
+          default: "en-US"
+          example: "en-US"
+
+    VoiceCommandResponse:
+      type: object
+      required:
+        - status
+        - action_plan
+        - confidence
+      properties:
+        status:
+          type: string
+          enum: [success, partial, error]
+          description: Status of the voice command processing
+        action_plan:
+          type: array
+          items:
+            type: string
+          description: Sequence of actions to execute
+          example: ["navigate_to_kitchen", "identify_red_cup", "grasp_object"]
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence level of the interpretation
+          example: 0.89
+        execution_time:
+          type: number
+          format: float
+          description: Time taken for processing in seconds
+          example: 2.45
+        interpreted_text:
+          type: string
+          description: The interpreted text from speech
+          example: "Go to the kitchen and find the red cup"
+
+    VisualSceneResponse:
+      type: object
+      required:
+        - objects
+        - scene_description
+      properties:
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetectedObject'
+        scene_description:
+          type: string
+          description: Natural language description of the scene
+          example: "Kitchen with table, chairs, and cupboards. Red cup on the counter."
+        timestamp:
+          type: string
+          format: date-time
+          description: Time when the scene was captured
+        confidence_map:
+          type: object
+          additionalProperties:
+            type: number
+            format: float
+          description: Confidence levels for each detected object
+
+    CognitivePlanRequest:
+      type: object
+      required:
+        - command
+        - robot_capabilities
+      properties:
+        command:
+          type: string
+          description: High-level command to be executed
+          example: "Clean the room"
+        robot_capabilities:
+          type: array
+          items:
+            type: string
+          description: Capabilities of the target robot
+          example: ["navigation", "manipulation", "grasping"]
+        safety_constraints:
+          $ref: '#/components/schemas/SafetyConstraints'
+        environment_context:
+          type: object
+          description: Context about the current environment
+          example:
+            room_type: "bedroom"
+            obstacles: ["bed", "desk", "chair"]
+
+    CognitivePlanResponse:
+      type: object
+      required:
+        - plan_steps
+        - reasoning_trace
+      properties:
+        plan_steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanStep'
+        reasoning_trace:
+          type: string
+          description: Explanation of the planning reasoning
+          example: "Identify dirty areas -> Navigate to first area -> Pick up trash -> Dispose -> Repeat"
+        estimated_duration:
+          type: number
+          format: float
+          description: Estimated time to complete the plan in seconds
+        safety_assessment:
+          $ref: '#/components/schemas/SafetyAssessment'
+
+    ActionPlanRequest:
+      type: object
+      required:
+        - steps
+        - robot_id
+      properties:
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanStep'
+        robot_id:
+          type: string
+          description: ID of the robot to execute the plan
+        priority:
+          type: string
+          enum: [low, normal, high, critical]
+          default: normal
+        timeout:
+          type: number
+          format: int32
+          description: Maximum time to wait for completion in seconds
+          default: 300
+
+    ExecutionResponse:
+      type: object
+      required:
+        - execution_id
+        - status
+      properties:
+        execution_id:
+          type: string
+          description: Unique identifier for the execution
+        status:
+          type: string
+          enum: [accepted, queued, executing, completed, failed]
+        estimated_completion:
+          type: string
+          format: date-time
+          description: Estimated time of completion
+
+    SimulationRequest:
+      type: object
+      required:
+        - scenario
+        - robot_model
+      properties:
+        scenario:
+          type: string
+          description: Name of the simulation scenario
+          example: "kitchen_cleanup"
+        robot_model:
+          type: string
+          description: Robot model to use in simulation
+          example: "unitree_h1"
+        initial_conditions:
+          type: object
+          description: Initial state of the simulation
+        voice_command:
+          type: string
+          description: Voice command to test in simulation
+          example: "Clean the kitchen"
+
+    SimulationResponse:
+      type: object
+      required:
+        - simulation_id
+        - results
+      properties:
+        simulation_id:
+          type: string
+          description: Unique identifier for the simulation run
+        results:
+          $ref: '#/components/schemas/SimulationResults'
+        metrics:
+          type: object
+          additionalProperties:
+            type: number
+            format: float
+          description: Performance metrics from the simulation
+
+    DetectedObject:
+      type: object
+      required:
+        - id
+        - class
+        - confidence
+        - bounding_box
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the detected object
+        class:
+          type: string
+          description: Object class (e.g., "cup", "chair", "table")
+          example: "cup"
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence level of detection
+        bounding_box:
+          $ref: '#/components/schemas/BoundingBox'
+        position_3d:
+          $ref: '#/components/schemas/Position3D'
+        properties:
+          type: object
+          description: Additional properties of the object
+
+    BoundingBox:
+      type: object
+      required:
+        - x
+        - y
+        - width
+        - height
+      properties:
+        x:
+          type: number
+          format: float
+          description: X coordinate of top-left corner
+        y:
+          type: number
+          format: float
+          description: Y coordinate of top-left corner
+        width:
+          type: number
+          format: float
+          description: Width of bounding box
+        height:
+          type: number
+          format: float
+          description: Height of bounding box
+
+    Position3D:
+      type: object
+      required:
+        - x
+        - y
+        - z
+      properties:
+        x:
+          type: number
+          format: float
+          description: X coordinate in 3D space
+        y:
+          type: number
+          format: float
+          description: Y coordinate in 3D space
+        z:
+          type: number
+          format: float
+          description: Z coordinate in 3D space
+
+    PlanStep:
+      type: object
+      required:
+        - action
+        - parameters
+        - description
+      properties:
+        action:
+          type: string
+          description: Action to be performed
+          example: "navigate_to"
+        parameters:
+          type: object
+          description: Parameters for the action
+          example:
+            target_location: "kitchen_counter"
+            approach_angle: 45
+        description:
+          type: string
+          description: Human-readable description of the step
+          example: "Navigate to the kitchen counter area"
+        estimated_duration:
+          type: number
+          format: float
+          description: Estimated time for this step in seconds
+        safety_constraints:
+          $ref: '#/components/schemas/SafetyConstraints'
+
+    SafetyConstraints:
+      type: object
+      properties:
+        max_velocity:
+          type: number
+          format: float
+          description: Maximum allowed velocity
+        max_force:
+          type: number
+          format: float
+          description: Maximum allowed force for manipulations
+        safety_zones:
+          type: array
+          items:
+            type: string
+          description: Areas to avoid
+        emergency_stop:
+          type: boolean
+          default: true
+          description: Whether emergency stop is enabled
+
+    SafetyAssessment:
+      type: object
+      required:
+        - risk_level
+        - safety_score
+      properties:
+        risk_level:
+          type: string
+          enum: [low, medium, high, critical]
+          description: Overall risk level of the plan
+        safety_score:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Safety score between 0 and 1
+        identified_risks:
+          type: array
+          items:
+            type: string
+          description: Specific risks identified in the plan
+        mitigation_steps:
+          type: array
+          items:
+            type: string
+          description: Steps to mitigate identified risks
+
+    SimulationResults:
+      type: object
+      required:
+        - success
+        - metrics
+      properties:
+        success:
+          type: boolean
+          description: Whether the simulation task was completed successfully
+        metrics:
+          type: object
+          additionalProperties:
+            type: number
+            format: float
+          description: Performance metrics from the simulation
+          example:
+            completion_time: 120.5
+            success_rate: 0.95
+            safety_violations: 0
+        log:
+          type: array
+          items:
+            type: string
+          description: Log of events during simulation
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error code
+          example: "INVALID_COMMAND"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "The command 'fly to moon' is not supported"
+        details:
+          type: object
+          description: Additional error details
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+tags:
+  - name: voice
+    description: Voice command processing endpoints
+  - name: perception
+    description: Visual perception and scene understanding
+  - name: planning
+    description: Cognitive planning and reasoning
+  - name: execution
+    description: Robot action execution
+  - name: simulation
+    description: Simulation environment endpoints
