@@ -1,43 +1,43 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/project-01-book-with-AI/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/project-01-book-with-AI/docs",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "integration/index",
-              "path": "/docs/integration/",
+              "path": "/project-01-book-with-AI/docs/integration/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
-              "path": "/docs/intro",
+              "path": "/project-01-book-with-AI/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "nvidia-isaac/index",
-              "path": "/docs/nvidia-isaac/",
+              "path": "/project-01-book-with-AI/docs/nvidia-isaac/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2-foundations/index",
-              "path": "/docs/ros2-foundations/",
+              "path": "/project-01-book-with-AI/docs/ros2-foundations/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/index",
-              "path": "/docs/simulation/",
+              "path": "/project-01-book-with-AI/docs/simulation/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla-humanoids/index",
-              "path": "/docs/vla-humanoids/",
+              "path": "/project-01-book-with-AI/docs/vla-humanoids/",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -45,7 +45,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/intro",
+                "path": "/project-01-book-with-AI/docs/intro",
                 "label": "intro"
               }
             }

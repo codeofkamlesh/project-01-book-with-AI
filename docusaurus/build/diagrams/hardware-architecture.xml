@@ -1,0 +1,75 @@
+<mxGraphModel dx="1426" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="Hardware Architecture (RTX Workstation → Jetson → Robot)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+      <mxGeometry x="20" y="20" width="810" height="650" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="RTX Workstation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="60" y="100" width="200" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="Intel i7 / AMD Ryzen 7&lt;br&gt;8+ cores&lt;br&gt;NVIDIA RTX 3080+ (24GB+ VRAM)&lt;br&gt;32GB+ RAM&lt;br&gt;1TB SSD&lt;br&gt;Ubuntu 22.04 LTS&lt;br&gt;ROS 2 Humble&lt;br&gt;Isaac Sim&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="70" y="130" width="180" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="NVIDIA Jetson Orin AGX" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="320" y="100" width="200" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="ARM A78AE CPU&lt;br&gt;2291 GFLOPS&lt;br&gt;32GB LPDDR5 RAM&lt;br&gt;JetPack SDK&lt;br&gt;Real-time Processing&lt;br&gt;ROS 2 Communication&lt;br&gt;Sensor Integration&lt;br&gt;Motor Control&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="330" y="130" width="180" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="Unitree H1 Humanoid Robot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="580" y="100" width="200" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="22 DOF (12 in legs, 6 in arms, 3 in torso, 1 in head)&lt;br&gt;45kg weight&lt;br&gt;1.85m height&lt;br&gt;48V 30A max current&lt;br&gt;20+ motors&lt;br&gt;IMU sensors&lt;br&gt;Camera sensors&lt;br&gt;Force sensors&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="590" y="130" width="180" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="9" value="Network Communication" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="3" target="5" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="270" y="210" as="sourcePoint"/>
+        <mxPoint x="320" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="10" value="Ethernet/WiFi&lt;br&gt;ROS 2 DDS&lt;br&gt;Real-time Control" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+      <mxGeometry x="270" y="180" width="40" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="Hardware Interface" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="5" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="530" y="210" as="sourcePoint"/>
+        <mxPoint x="580" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="12" value="CAN Bus&lt;br&gt;Motor Control&lt;br&gt;Sensor Feedback" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+      <mxGeometry x="530" y="180" width="40" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="Development &amp;amp; Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="70" y="340" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="AI Processing&lt;br&gt;LLM Inference" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="70" y="420" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="Real-time Control" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="330" y="340" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" value="Sensor Fusion" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="330" y="420" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" value="Actuation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="590" y="340" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="18" value="Perception" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="590" y="420" width="180" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="19" value="Cloud Integration" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+      <mxGeometry x="60" y="520" width="200" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="20" value="LLM Services&lt;br&gt;Model Training&lt;br&gt;Data Storage&lt;br&gt;Remote Access&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="70" y="540" width="180" height="70" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" value="Cloud Connection" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="19" target="3" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="160" y="510" as="sourcePoint"/>
+        <mxPoint x="210" y="460" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

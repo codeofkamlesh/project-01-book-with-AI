@@ -1,0 +1,99 @@
+<mxGraphModel dx="1426" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="Module Data Flow (ROS ↔ Gazebo ↔ Isaac ↔ VLA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+      <mxGeometry x="20" y="20" width="810" height="650" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="ROS 2 Nervous System" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="60" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="Nodes&lt;br&gt;Topics&lt;br&gt;Services&lt;br&gt;Actions&lt;br&gt;Messages&lt;br&gt;Parameters&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="70" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="Digital Twin (Gazebo &amp;amp; Unity)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="250" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="Physics Simulation&lt;br&gt;Sensor Simulation&lt;br&gt;Environment Modeling&lt;br&gt;Synthetic Data&lt;br&gt;Gazebo&lt;br&gt;Unity&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="260" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="AI-Robot Brain (NVIDIA Isaac)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="440" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="Perception&lt;br&gt;VSLAM&lt;br&gt;Isaac ROS GEMs&lt;br&gt;Navigation&lt;br&gt;Manipulation&lt;br&gt;GPU Processing&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="450" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="9" value="Vision-Language-Action (VLA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="630" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="LLM Integration&lt;br&gt;Voice Processing&lt;br&gt;Planning&lt;br&gt;Action Execution&lt;br&gt;Multimodal Perception&lt;br&gt;Cognitive Reasoning&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="640" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="Simulation Data" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="3" target="5" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="230" y="210" as="sourcePoint"/>
+        <mxPoint x="280" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="12" value="Perception Data" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="5" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="420" y="210" as="sourcePoint"/>
+        <mxPoint x="470" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="13" value="Action Planning Data" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="7" target="9" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="610" y="210" as="sourcePoint"/>
+        <mxPoint x="660" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="14" value="Control Commands" style="endArrow=classic;startArrow=classic;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="9" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="620" y="230" as="sourcePoint"/>
+        <mxPoint x="670" y="180" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="15" value="Navigation Commands" style="endArrow=classic;startArrow=classic;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="7" target="5" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="430" y="230" as="sourcePoint"/>
+        <mxPoint x="480" y="180" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="16" value="Simulation Commands" style="endArrow=classic;startArrow=classic;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="5" target="3" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="240" y="230" as="sourcePoint"/>
+        <mxPoint x="290" y="180" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="17" value="Robot State" style="endArrow=classic;startArrow=classic;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="3" target="9" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="230" y="250" as="sourcePoint"/>
+        <mxPoint x="280" y="200" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="18" value="Sensor Data" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="3" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="140" y="310" as="sourcePoint"/>
+        <mxPoint x="190" y="260" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="19" value="Visual Data" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="5" target="9" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="330" y="310" as="sourcePoint"/>
+        <mxPoint x="380" y="260" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="20" value="Voice Commands" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="9" target="3" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="520" y="310" as="sourcePoint"/>
+        <mxPoint x="570" y="260" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="21" value="ROS 2 Middleware" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="200" y="340" width="450" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="22" value="Topics&lt;br&gt;Services&lt;br&gt;Actions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="210" y="350" width="430" height="20" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

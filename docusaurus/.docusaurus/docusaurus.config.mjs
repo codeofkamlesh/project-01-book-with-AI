@@ -4,11 +4,11 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "AI/Spec-Driven Robotics Book",
+  "title": "Physical AI & Humanoid Robotics",
   "tagline": "A comprehensive guide to humanoid robotics using ROS 2, Simulation, Isaac, and Vision-Language-Action systems",
   "favicon": "img/favicon.ico",
-  "url": "https://your-username.github.io",
-  "baseUrl": "/",
+  "url": "https://codeofkamlesh.github.io",
+  "baseUrl": "/project-01-book-with-AI/",
   "organizationName": "your-username",
   "projectName": "project-01-book-with-AI",
   "onBrokenLinks": "throw",

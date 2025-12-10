@@ -9,15 +9,15 @@ import draculaTheme from 'prism-react-renderer/themes/dracula/index.js';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AI/Spec-Driven Robotics Book',
+  title: 'Physical AI & Humanoid Robotics',
   tagline: 'A comprehensive guide to humanoid robotics using ROS 2, Simulation, Isaac, and Vision-Language-Action systems',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io',
+  url: 'https://codeofkamlesh.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.NODE_ENV === 'production' ? '/project-01-book-with-AI' : '/',
+  baseUrl: process.env.NODE_ENV === 'production' ? '/project-01-book-with-AI/' : '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

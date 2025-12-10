@@ -1,0 +1,237 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "584": [
+      584
+    ],
+    "17896441": [
+      869,
+      401
+    ],
+    "main": [
+      354,
+      869,
+      792
+    ],
+    "runtime~main": [
+      792,
+      869,
+      354
+    ],
+    "0212ecdd": [
+      532
+    ],
+    "0e384e19": [
+      976
+    ],
+    "5e95c892": [
+      647
+    ],
+    "7987babc": [
+      558
+    ],
+    "a7456010": [
+      235
+    ],
+    "a7bd4aaa": [
+      98
+    ],
+    "a94703ab": [
+      869,
+      48
+    ],
+    "aba21aa0": [
+      742
+    ],
+    "c4f5d8e4": [
+      869,
+      634
+    ],
+    "c7b39284": [
+      473
+    ],
+    "d0316d34": [
+      944
+    ],
+    "f58cd18e": [
+      815
+    ],
+    "f85fcc81": [
+      183
+    ],
+    "styles": [
+      48,
+      354,
+      401,
+      634,
+      792,
+      869
+    ]
+  },
+  "assets": {
+    "48": {
+      "js": [
+        {
+          "file": "assets/js/a94703ab.e1168c5a.js",
+          "hash": "a090caa247fe9747",
+          "publicPath": "/project-01-book-with-AI/assets/js/a94703ab.e1168c5a.js"
+        }
+      ]
+    },
+    "98": {
+      "js": [
+        {
+          "file": "assets/js/a7bd4aaa.3b29fa03.js",
+          "hash": "c7ba4aef5d601c49",
+          "publicPath": "/project-01-book-with-AI/assets/js/a7bd4aaa.3b29fa03.js"
+        }
+      ]
+    },
+    "183": {
+      "js": [
+        {
+          "file": "assets/js/f85fcc81.b8370fcb.js",
+          "hash": "83825564134e04da",
+          "publicPath": "/project-01-book-with-AI/assets/js/f85fcc81.b8370fcb.js"
+        }
+      ]
+    },
+    "235": {
+      "js": [
+        {
+          "file": "assets/js/a7456010.ac5ec2ae.js",
+          "hash": "9ecf169628fbfcf3",
+          "publicPath": "/project-01-book-with-AI/assets/js/a7456010.ac5ec2ae.js"
+        }
+      ]
+    },
+    "354": {
+      "js": [
+        {
+          "file": "assets/js/runtime~main.d893dee4.js",
+          "hash": "dd4eb1324f87e675",
+          "publicPath": "/project-01-book-with-AI/assets/js/runtime~main.d893dee4.js"
+        }
+      ]
+    },
+    "401": {
+      "js": [
+        {
+          "file": "assets/js/17896441.22363e74.js",
+          "hash": "3441fdce91f964d2",
+          "publicPath": "/project-01-book-with-AI/assets/js/17896441.22363e74.js"
+        }
+      ]
+    },
+    "473": {
+      "js": [
+        {
+          "file": "assets/js/c7b39284.d88e701f.js",
+          "hash": "672f88464b69bf9d",
+          "publicPath": "/project-01-book-with-AI/assets/js/c7b39284.d88e701f.js"
+        }
+      ]
+    },
+    "532": {
+      "js": [
+        {
+          "file": "assets/js/0212ecdd.f83fdd84.js",
+          "hash": "6c10893265a644f2",
+          "publicPath": "/project-01-book-with-AI/assets/js/0212ecdd.f83fdd84.js"
+        }
+      ]
+    },
+    "558": {
+      "js": [
+        {
+          "file": "assets/js/7987babc.ccb898f2.js",
+          "hash": "29d82298602834c5",
+          "publicPath": "/project-01-book-with-AI/assets/js/7987babc.ccb898f2.js"
+        }
+      ]
+    },
+    "584": {
+      "js": [
+        {
+          "file": "assets/js/584.f9b20c10.js",
+          "hash": "b5fb5a2753ec571c",
+          "publicPath": "/project-01-book-with-AI/assets/js/584.f9b20c10.js"
+        }
+      ]
+    },
+    "634": {
+      "js": [
+        {
+          "file": "assets/js/c4f5d8e4.279f5762.js",
+          "hash": "f54f023b8ae926ce",
+          "publicPath": "/project-01-book-with-AI/assets/js/c4f5d8e4.279f5762.js"
+        }
+      ]
+    },
+    "647": {
+      "js": [
+        {
+          "file": "assets/js/5e95c892.be0a0acd.js",
+          "hash": "c1b5e16145affdfe",
+          "publicPath": "/project-01-book-with-AI/assets/js/5e95c892.be0a0acd.js"
+        }
+      ]
+    },
+    "742": {
+      "js": [
+        {
+          "file": "assets/js/aba21aa0.736bbd99.js",
+          "hash": "8d271cd5ba55324a",
+          "publicPath": "/project-01-book-with-AI/assets/js/aba21aa0.736bbd99.js"
+        }
+      ]
+    },
+    "792": {
+      "js": [
+        {
+          "file": "assets/js/main.28291793.js",
+          "hash": "5da10facee6aa210",
+          "publicPath": "/project-01-book-with-AI/assets/js/main.28291793.js"
+        }
+      ]
+    },
+    "815": {
+      "js": [
+        {
+          "file": "assets/js/f58cd18e.371be691.js",
+          "hash": "ef1881474a12684a",
+          "publicPath": "/project-01-book-with-AI/assets/js/f58cd18e.371be691.js"
+        }
+      ]
+    },
+    "869": {
+      "css": [
+        {
+          "file": "assets/css/styles.279d3346.css",
+          "hash": "e0433237ee86bd2b",
+          "publicPath": "/project-01-book-with-AI/assets/css/styles.279d3346.css"
+        }
+      ]
+    },
+    "944": {
+      "js": [
+        {
+          "file": "assets/js/d0316d34.cec2ef82.js",
+          "hash": "46a45c702aa4241c",
+          "publicPath": "/project-01-book-with-AI/assets/js/d0316d34.cec2ef82.js"
+        }
+      ]
+    },
+    "976": {
+      "js": [
+        {
+          "file": "assets/js/0e384e19.07d1c711.js",
+          "hash": "03a4cc39cfd9e26e",
+          "publicPath": "/project-01-book-with-AI/assets/js/0e384e19.07d1c711.js"
+        }
+      ]
+    }
+  }
+}

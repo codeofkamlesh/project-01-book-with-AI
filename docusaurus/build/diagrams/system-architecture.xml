@@ -1,0 +1,117 @@
+<mxGraphModel dx="1426" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="Physical AI &amp; Humanoid Robotics System" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+      <mxGeometry x="20" y="20" width="810" height="650" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="ROS 2 Nervous System" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="60" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="Nodes&amp;nbsp;&lt;br&gt;Topics&lt;br&gt;Services&lt;br&gt;Actions&lt;br&gt;URDF&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="70" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="Digital Twin (Gazebo &amp;amp; Unity)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="250" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="Gazebo&lt;br&gt;Unity&lt;br&gt;Physics&lt;br&gt;Simulation&lt;br&gt;Synthetic Data&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="260" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="AI-Robot Brain (NVIDIA Isaac)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="440" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="Isaac Sim&lt;br&gt;Isaac ROS&lt;br&gt;VSLAM&lt;br&gt;Perception&lt;br&gt;Navigation&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="450" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="9" value="Vision-Language-Action (VLA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+      <mxGeometry x="630" y="100" width="160" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="LLM Integration&lt;br&gt;Voice Processing&lt;br&gt;Planning&lt;br&gt;Action Execution&lt;br&gt;Multimodal Perception&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="640" y="130" width="140" height="160" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="Unitree H1 Humanoid Robot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="60" y="340" width="200" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="Motors&lt;br&gt;Sensors&lt;br&gt;Actuators&lt;br&gt;IMU&lt;br&gt;Cameras&lt;br&gt;LiDAR&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="70" y="370" width="180" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="NVIDIA Jetson Orin AGX" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="280" y="340" width="160" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="Robot Controller&lt;br&gt;Real-time Processing&lt;br&gt;ROS 2 Communication&lt;br&gt;Sensor Fusion&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="290" y="370" width="140" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="15" value="RTX Workstation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+      <mxGeometry x="460" y="340" width="160" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="16" value="Development Environment&lt;br&gt;Simulation&lt;br&gt;AI Processing&lt;br&gt;LLM Inference&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="470" y="370" width="140" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="17" value="Simulation Environment" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+      <mxGeometry x="640" y="340" width="160" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="18" value="Isaac Sim&lt;br&gt;Gazebo&lt;br&gt;Unity&lt;br&gt;Physics Engine&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+      <mxGeometry x="650" y="370" width="140" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="19" value="ROS 2 Communication" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="11" target="3" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="160" y="330" as="sourcePoint"/>
+        <mxPoint x="210" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="20" value="ROS 2 Communication" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="13" target="5" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="360" y="330" as="sourcePoint"/>
+        <mxPoint x="410" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="21" value="ROS 2 Communication" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="15" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="540" y="330" as="sourcePoint"/>
+        <mxPoint x="590" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="22" value="Simulation Interface" style="endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;exitX=0.5;exitY=0;" parent="1" source="17" target="9" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="720" y="330" as="sourcePoint"/>
+        <mxPoint x="770" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="23" value="Hardware Interface" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="11" target="13" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="270" y="410" as="sourcePoint"/>
+        <mxPoint x="320" y="360" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="24" value="Development Interface" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="13" target="15" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="450" y="410" as="sourcePoint"/>
+        <mxPoint x="500" y="360" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="25" value="Simulation Bridge" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="15" target="17" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="630" y="410" as="sourcePoint"/>
+        <mxPoint x="680" y="360" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="26" value="AI Processing" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="3" target="7" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="230" y="210" as="sourcePoint"/>
+        <mxPoint x="280" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="27" value="Perception Pipeline" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="5" target="8" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="420" y="210" as="sourcePoint"/>
+        <mxPoint x="470" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="28" value="VLA Pipeline" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="7" target="9" edge="1">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mxPoint x="610" y="210" as="sourcePoint"/>
+        <mxPoint x="660" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

@@ -5,7 +5,7 @@
   "source": "@site/docs/integration/index.md",
   "sourceDirName": "integration",
   "slug": "/integration/",
-  "permalink": "/docs/integration/",
+  "permalink": "/project-01-book-with-AI/docs/integration/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/your-username/project-01-book-with-AI/tree/master/docusaurus/docs/integration/index.md",
@@ -18,6 +18,6 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Vision-Language-Action (VLA) for Humanoid Control",
-    "permalink": "/docs/vla-humanoids/"
+    "permalink": "/project-01-book-with-AI/docs/vla-humanoids/"
   }
 }
