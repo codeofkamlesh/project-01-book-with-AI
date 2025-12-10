@@ -46,7 +46,8 @@
       "Bash(cd E:Q4 hackathonesproject-01-book-with-AIdocusaurus)",
       "Bash(npm install)",
       "WebFetch(domain:localhost)",
-      "Bash(dir \"E:\\Q4 hackathones\\project-01-book-with-AI\\docusaurus\\static\\img\" /b)"
+      "Bash(dir \"E:\\Q4 hackathones\\project-01-book-with-AI\\docusaurus\\static\\img\" /b)",
+      "Bash(dir \"E:\\Q4 hackathones\\project-01-book-with-AI\\docusaurus\\static\" /ad)"
     ],
     "deny": [],
     "ask": []
