@@ -5,7 +5,7 @@
   "source": "@site/docs/vla-humanoids/index.md",
   "sourceDirName": "vla-humanoids",
   "slug": "/vla-humanoids/",
-  "permalink": "/docs/vla-humanoids/",
+  "permalink": "/project-01-book-with-AI/docs/vla-humanoids/",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,6 +17,6 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "NVIDIA Isaac & Isaac ROS",
-    "permalink": "/docs/nvidia-isaac/"
+    "permalink": "/project-01-book-with-AI/docs/nvidia-isaac/"
   }
 }

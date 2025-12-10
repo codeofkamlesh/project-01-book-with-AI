@@ -70,7 +70,12 @@
       "Bash(powershell Get-ChildItem -Path . -Name \"*intro*\" -Recurse)",
       "Bash(rm \"docusaurus/docs/intro.md\")",
       "Bash(dir package.json /s)",
-      "Bash(dir docusaurus/package.json)"
+      "Bash(dir docusaurus/package.json)",
+      "Bash(grep -l $'\\xEF\\xBF\\xBD' ./docusaurus/docs/*.md ./docusaurus/docs/*/*.md)",
+      "Bash(file -bi ./docusaurus/docs/*.md ./docusaurus/docs/*/*.md)",
+      "Bash(powershell Get-ChildItem -Path \"docusaurus/docs\" -Recurse -Filter \"*.md\")",
+      "Bash(find docusaurus/docs -name \"*.md\" -exec file {} ;)",
+      "Bash(npm run build)"
     ],
     "deny": [],
     "ask": []

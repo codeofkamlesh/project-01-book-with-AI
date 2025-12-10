@@ -67,7 +67,7 @@ export default {
           "items": [
             {
               "label": "Book",
-              "to": "/docs/intro"
+              "to": "project-01-book-with-AI/docs/ros2-foundations/"
             }
           ]
         },
