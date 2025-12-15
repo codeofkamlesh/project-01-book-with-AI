@@ -152,6 +152,150 @@ Maintain all original facts and information from the source content, but adapt t
             return "beginner-friendly"
 
 
+    async def generate_ros2_code(
+        self,
+        urdf_path: str,
+        target_controller: str,
+        robot_joints: list,
+        node_name: str,
+        additional_requirements: str = ""
+    ) -> Dict[str, str]:
+        """
+        Generate ROS2 code based on specifications
+        """
+        try:
+            system_message = """You are an expert ROS2 developer. Generate complete, working ROS2 code based on the provided specifications.
+            Follow ROS2 Humble Hawksbill conventions and best practices. Include proper error handling, logging, and documentation.
+            Generate the following outputs:
+            1. A complete rclpy node skeleton
+            2. A launch file to start the node
+            3. A specification for unit tests
+            4. Inline documentation and comments"""
+
+            user_message = f"""Generate ROS2 code with the following specifications:
+- URDF path: {urdf_path}
+- Target controller: {target_controller}
+- Robot joints: {robot_joints}
+- Node name: {node_name}
+- Additional requirements: {additional_requirements}
+
+Provide the output as separate code blocks for each component."""
+
+            response = await self.client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": user_message}
+                ],
+                temperature=0.3,
+                max_tokens=3000
+            )
+
+            # In a real implementation, we would parse the response to extract the different components
+            # For now, we'll return the full response
+            return {
+                "node_skeleton": response.choices[0].message.content,
+                "launch_file": "# Launch file would be generated here based on the node",
+                "tests_spec": "# Test specifications would be generated here",
+                "documentation": "# Documentation would be extracted from the response"
+            }
+
+        except Exception as e:
+            print(f"Error generating ROS2 code: {str(e)}")
+            raise
+
+    async def create_gazebo_scene(
+        self,
+        robot_model_path: str,
+        environment_type: str,
+        objects: list,
+        lighting: str = "default",
+        physics_properties: dict = None
+    ) -> Dict[str, str]:
+        """
+        Create Gazebo scene based on specifications
+        """
+        try:
+            if physics_properties is None:
+                physics_properties = {}
+
+            system_message = """You are an expert Gazebo simulation developer. Create a complete Gazebo world file based on the provided specifications.
+            Follow SDF format standards and Gazebo Harmonic conventions. Include proper lighting, physics properties, and object placement."""
+
+            user_message = f"""Create a Gazebo scene with the following specifications:
+- Robot model path: {robot_model_path}
+- Environment type: {environment_type}
+- Objects to include: {objects}
+- Lighting: {lighting}
+- Physics properties: {physics_properties}
+
+Provide the output as a complete SDF world file."""
+
+            response = await self.client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": user_message}
+                ],
+                temperature=0.3,
+                max_tokens=2000
+            )
+
+            return {
+                "world_file": response.choices[0].message.content,
+                "config": "# Configuration file would be generated here",
+                "documentation": "# Documentation for the scene would be provided here"
+            }
+
+        except Exception as e:
+            print(f"Error creating Gazebo scene: {str(e)}")
+            raise
+
+    async def generate_quiz(
+        self,
+        topic: str,
+        difficulty_level: str,
+        question_count: int,
+        question_types: list,
+        learning_objectives: list
+    ) -> Dict[str, Any]:
+        """
+        Generate quiz based on specifications
+        """
+        try:
+            system_message = """You are an expert educator creating quizzes for the Physical AI & Humanoid Robotics book.
+            Generate questions that align with the learning objectives and match the specified difficulty level and types."""
+
+            user_message = f"""Generate a quiz with the following specifications:
+- Topic: {topic}
+- Difficulty level: {difficulty_level}
+- Number of questions: {question_count}
+- Question types: {question_types}
+- Learning objectives: {learning_objectives}
+
+Provide the quiz with questions, answers, and explanations."""
+
+            response = await self.client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": user_message}
+                ],
+                temperature=0.4,
+                max_tokens=2500
+            )
+
+            return {
+                "questions": response.choices[0].message.content,
+                "answers": "Answers would be extracted from the response",
+                "explanations": "Explanations would be provided for each answer",
+                "scoring_guide": "Scoring guide would be generated based on difficulty"
+            }
+
+        except Exception as e:
+            print(f"Error generating quiz: {str(e)}")
+            raise
+
 # Example usage
 if __name__ == "__main__":
     import asyncio
@@ -184,6 +328,16 @@ if __name__ == "__main__":
         # Test translation
         urdu_translation = await agent.translate_to_urdu("Hello, this is a test of the Urdu translation feature.")
         print(f"Urdu translation: {urdu_translation}")
+
+        # Test subagents
+        ros2_result = await agent.generate_ros2_code(
+            urdf_path="/path/to/robot.urdf",
+            target_controller="position_controllers/JointGroupPositionController",
+            robot_joints=["joint1", "joint2"],
+            node_name="test_controller",
+            additional_requirements="publish joint states"
+        )
+        print(f"ROS2 code generation result: {ros2_result}")
 
     # Run the test
     asyncio.run(test_agent())

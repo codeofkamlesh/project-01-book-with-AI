@@ -1,0 +1,23 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="rag_backend",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        "fastapi>=0.104.0",
+        "uvicorn>=0.24.0",
+        "python-multipart>=0.0.6",
+        "asyncpg>=0.29.0",
+        "SQLAlchemy>=2.0.0",
+        "sqlalchemy[asyncio]>=2.0.0",
+        "qdrant-client>=1.7.0",
+        "openai>=1.0.0",
+        "python-dotenv>=1.0.0",
+        "click>=8.1.0",
+        "tqdm>=4.64.0",
+        "colorama>=0.4.5",
+        "numpy>=1.21.0",
+        "requests>=2.28.0",
+    ],
+)

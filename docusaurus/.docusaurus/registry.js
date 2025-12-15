@@ -1,5 +1,8 @@
 export default {
+  "__comp---site-src-pages-author-tools-jsx-324-e28": [() => import(/* webpackChunkName: "__comp---site-src-pages-author-tools-jsx-324-e28" */ "@site/src/pages/author-tools.jsx"), "@site/src/pages/author-tools.jsx", require.resolveWeak("@site/src/pages/author-tools.jsx")],
   "__comp---site-src-pages-index-jsc-4-f-f99": [() => import(/* webpackChunkName: "__comp---site-src-pages-index-jsc-4-f-f99" */ "@site/src/pages/index.js"), "@site/src/pages/index.js", require.resolveWeak("@site/src/pages/index.js")],
+  "__comp---site-src-pages-login-tsx-34-b-c7d": [() => import(/* webpackChunkName: "__comp---site-src-pages-login-tsx-34-b-c7d" */ "@site/src/pages/login.tsx"), "@site/src/pages/login.tsx", require.resolveWeak("@site/src/pages/login.tsx")],
+  "__comp---site-src-pages-signup-tsx-8-d-9-369": [() => import(/* webpackChunkName: "__comp---site-src-pages-signup-tsx-8-d-9-369" */ "@site/src/pages/signup.tsx"), "@site/src/pages/signup.tsx", require.resolveWeak("@site/src/pages/signup.tsx")],
   "__comp---theme-debug-config-23-a-2ff": [() => import(/* webpackChunkName: "__comp---theme-debug-config-23-a-2ff" */ "@theme/DebugConfig"), "@theme/DebugConfig", require.resolveWeak("@theme/DebugConfig")],
   "__comp---theme-debug-contentba-8-ce7": [() => import(/* webpackChunkName: "__comp---theme-debug-contentba-8-ce7" */ "@theme/DebugContent"), "@theme/DebugContent", require.resolveWeak("@theme/DebugContent")],
   "__comp---theme-debug-global-dataede-0fa": [() => import(/* webpackChunkName: "__comp---theme-debug-global-dataede-0fa" */ "@theme/DebugGlobalData"), "@theme/DebugGlobalData", require.resolveWeak("@theme/DebugGlobalData")],

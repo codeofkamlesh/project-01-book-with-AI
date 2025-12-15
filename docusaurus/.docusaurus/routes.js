@@ -38,6 +38,21 @@ export default [
     exact: true
   },
   {
+    path: '/author-tools',
+    component: ComponentCreator('/author-tools', '2c8'),
+    exact: true
+  },
+  {
+    path: '/login',
+    component: ComponentCreator('/login', 'f43'),
+    exact: true
+  },
+  {
+    path: '/signup',
+    component: ComponentCreator('/signup', '312'),
+    exact: true
+  },
+  {
     path: '/docs',
     component: ComponentCreator('/docs', 'ede'),
     routes: [

@@ -1,7 +1,7 @@
 <!-- SYNC IMPACT REPORT:
-Version change: 1.0.0 → 1.0.1
-Added sections: Academic Writing Standards, System Constraints, Success Criteria, Document Constraints, Architectural Principles
-Removed sections: None
+Version change: 1.0.2 → 1.0.3
+Added sections: AI-Native Book Capabilities
+Modified sections: AI-Augmented Book Intelligence (expanded with specific constraints)
 Templates requiring updates: N/A
 Follow-up TODOs: None
 -->
@@ -85,4 +85,29 @@ The system MAY include AI-driven features that enhance the educational experienc
 - All AI-generated content must be clearly labeled as AI-generated
 - Original content remains unchanged - AI provides enhancement layers only
 
-**Version**: 1.0.2 | **Ratified**: 2025-12-15 | **Last Amended**: 2025-12-15
+## AI-Native Book Capabilities
+The system MUST implement AI-native book features with the following mandatory requirements:
+
+### RAG Content Constraint
+- RAG must answer only from book corpus, never from external sources
+- All responses must include provenance information citing specific book sections
+- No knowledge beyond the book content is permitted in RAG responses
+
+### Spec-Traceability Requirement
+- All AI features must be spec-traceable from requirement to implementation
+- Each AI capability must map to specific sections in the project specifications
+- No "vibe coding" allowed - all AI features must follow documented specifications
+
+### Context7 MCP Validation
+- Context7 MCP is mandatory for AI reasoning validation
+- All AI reasoning steps must be validated through the Context7 MCP architecture
+- AI outputs must pass MCP validation before being presented to users
+
+### AI Feature Requirements
+- Integrated RAG chatbot for book content questions with proper provenance
+- Authentication & user profiling for personalized learning experiences
+- Personalized content rendering based on user background and preferences
+- Urdu translation as a non-destructive toggle preserving original content
+- Reusable intelligence (subagents + skills) for educational content generation
+
+**Version**: 1.0.3 | **Ratified**: 2025-12-15 | **Last Amended**: 2025-12-15

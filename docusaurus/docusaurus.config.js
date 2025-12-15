@@ -61,6 +61,11 @@ const config = {
     './src/plugins/rag-plugin/index.js', // AI-Augmented Book Intelligence Plugin
   ],
 
+  scripts: [
+    '/js/api-config.js', // Static API configuration for browser runtime
+    { src: '/js/auth-widget.js', async: true }, // Lightweight auth status widget
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -82,6 +87,11 @@ const config = {
           {
             href: 'https://github.com/codeofkamlesh/project-01-book-with-AI',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'html',
+            value: '<div id="auth-status"></div>',
             position: 'right',
           },
         ],

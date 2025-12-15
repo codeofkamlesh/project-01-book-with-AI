@@ -39,6 +39,13 @@ export default {
   "plugins": [
     "./src/plugins/rag-plugin/index.js"
   ],
+  "scripts": [
+    "/js/api-config.js",
+    {
+      "src": "/js/auth-widget.js",
+      "async": true
+    }
+  ],
   "themeConfig": {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
@@ -57,6 +64,11 @@ export default {
         {
           "href": "https://github.com/codeofkamlesh/project-01-book-with-AI",
           "label": "GitHub",
+          "position": "right"
+        },
+        {
+          "type": "html",
+          "value": "<div id=\"auth-status\"></div>",
           "position": "right"
         }
       ],
@@ -360,7 +372,6 @@ export default {
   ],
   "customFields": {},
   "themes": [],
-  "scripts": [],
   "headTags": [],
   "stylesheets": [],
   "clientModules": [],

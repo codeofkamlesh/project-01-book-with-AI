@@ -55,6 +55,9 @@ qdrant-client>=1.7.0
 openai>=1.0.0
 python-dotenv>=1.0.0
 
+# Authentication
+better-auth>=0.0.18
+
 # General utilities
 click>=8.1.0
 tqdm>=4.64.0

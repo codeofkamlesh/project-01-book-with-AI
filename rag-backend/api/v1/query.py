@@ -2,8 +2,10 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 from datetime import datetime
-from ...pipeline.rag import RAGPipeline
-from ...db.pg_client import get_user_profile
+
+# Import using absolute imports for the package
+from rag_backend.pipeline.rag import RAGPipeline
+from rag_backend.db.pg_client import get_user_profile
 
 router = APIRouter()
 

@@ -402,6 +402,79 @@ With multiple developers:
 **Checkpoint**: All AI features validated and verified to work correctly with proper provenance, security, and constitutional compliance.
 
 ---
+## Phase AI-2: AI Features Backfill Tasks (Priority: P7)
+
+**Goal**: Create detailed implementation tasks for AI features that already exist in code.
+
+**Independent Test**: All AI features are properly implemented with complete task coverage.
+
+### RAG Ingestion Tasks
+
+- [ ] T300 [P] [AI] Implement document parsing for RAG ingestion in rag-backend/pipeline/document_parser.py
+- [ ] T301 [P] [AI] Create chunking algorithm for RAG documents in rag-backend/pipeline/chunker.py
+- [ ] T302 [P] [AI] Implement embedding generation for document chunks in rag-backend/pipeline/embed.py
+- [ ] T303 [P] [AI] Create Qdrant indexing for embeddings in rag-backend/pipeline/vector_store.py
+- [ ] T304 [P] [AI] Validate ingestion pipeline end-to-end in rag-backend/tests/test_ingestion.py
+
+### RAG Query & Highlight Tasks
+
+- [ ] T305 [P] [AI] Implement query preprocessing in rag-backend/pipeline/query_processor.py
+- [ ] T306 [P] [AI] Create semantic search functionality in rag-backend/pipeline/retriever.py
+- [ ] T307 [P] [AI] Implement reranking for search results in rag-backend/pipeline/reranker.py
+- [ ] T308 [P] [AI] Add highlight-to-ask functionality in docusaurus/src/plugins/rag-plugin/src/HighlightBinder.js
+- [ ] T309 [P] [AI] Validate query-response accuracy in rag-backend/tests/test_query_accuracy.py
+
+### Auth Signup/Signin Tasks
+
+- [ ] T310 [P] [AI] Implement Better-Auth configuration in rag-backend/config/auth_config.py
+- [ ] T311 [P] [AI] Create signup endpoint with profile collection in rag-backend/api/v1/auth.py
+- [ ] T312 [P] [AI] Implement signin endpoint with session management in rag-backend/api/v1/auth.py
+- [ ] T313 [P] [AI] Create auth middleware for protected routes in rag-backend/middleware/auth_middleware.py
+- [ ] T314 [P] [AI] Validate auth flow in rag-backend/tests/test_auth_flow.py
+
+### Profile Persistence Tasks
+
+- [ ] T315 [P] [AI] Create user profile model in rag-backend/db/models/user_profile.py
+- [ ] T316 [P] [AI] Implement profile creation/update in rag-backend/db/profile_dao.py
+- [ ] T317 [P] [AI] Add profile retrieval by user ID in rag-backend/db/profile_dao.py
+- [ ] T318 [P] [AI] Create profile validation logic in rag-backend/validators/profile_validator.py
+- [ ] T319 [P] [AI] Test profile persistence in rag-backend/tests/test_profile_persistence.py
+
+### Chapter Personalization Tasks
+
+- [ ] T320 [P] [AI] Implement personalization engine in rag-backend/agents/personalization_engine.py
+- [ ] T321 [P] [AI] Create content transformation logic in rag-backend/agents/content_transformer.py
+- [ ] T322 [P] [AI] Add personalization mode handling (simpler/advanced/visual/code-heavy) in rag-backend/agents/personalization_modes.py
+- [ ] T323 [P] [AI] Implement caching for personalized content in rag-backend/cache/personalization_cache.py
+- [ ] T324 [P] [AI] Validate personalization output in rag-backend/tests/test_personalization.py
+
+### Urdu Translation Toggle Tasks
+
+- [ ] T325 [P] [AI] Implement translation service in rag-backend/agents/translation_service.py
+- [ ] T326 [P] [AI] Create Urdu text processing utilities in rag-backend/utils/urdu_utils.py
+- [ ] T327 [P] [AI] Add translation caching in rag-backend/cache/translation_cache.py
+- [ ] T328 [P] [AI] Implement RTL text rendering in docusaurus/src/components/translate/UrduTranslationButton.jsx
+- [ ] T329 [P] [AI] Test translation accuracy and toggle functionality in rag-backend/tests/test_translation.py
+
+### Subagent Execution Tasks
+
+- [ ] T330 [P] [AI] Create ROS2 Code Generator subagent in rag-backend/agents/subagents/ros2_generator.py
+- [ ] T331 [P] [AI] Create Gazebo Scene Creator subagent in rag-backend/agents/subagents/gazebo_creator.py
+- [ ] T332 [P] [AI] Create Quiz Generator subagent in rag-backend/agents/subagents/quiz_generator.py
+- [ ] T333 [P] [AI] Implement subagent executor framework in rag-backend/agents/subagent_executor.py
+- [ ] T334 [P] [AI] Test subagent execution and output generation in rag-backend/tests/test_subagents.py
+
+### Docusaurus Mounting Tasks (Critical)
+
+- [ ] T335 [P] [AI] Mount RAG chat widget in docusaurus/src/theme/Root.jsx
+- [ ] T336 [P] [AI] Integrate auth component in docusaurus/src/components/auth/AuthComponent.jsx
+- [ ] T337 [P] [AI] Mount personalization button in docusaurus/src/theme/DocItem/Layout/index.jsx
+- [ ] T338 [P] [AI] Mount Urdu translation toggle in docusaurus/src/theme/DocItem/Layout/index.jsx
+- [ ] T339 [P] [AI] Validate all AI components render correctly in Docusaurus in docusaurus/tests/e2e/test_ai_components.js
+
+**Checkpoint**: All AI features have complete task coverage and are properly integrated into the Docusaurus frontend.
+
+---
 ## Notes
 
 - [P] tasks = different files, no dependencies

@@ -42,6 +42,27 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
+  "/author-tools-2c8": {
+    "__comp": "__comp---site-src-pages-author-tools-jsx-324-e28",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
+  },
+  "/login-f43": {
+    "__comp": "__comp---site-src-pages-login-tsx-34-b-c7d",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
+  },
+  "/signup-312": {
+    "__comp": "__comp---site-src-pages-signup-tsx-8-d-9-369",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
+  },
   "/docs-ede": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {

@@ -1,14 +1,14 @@
 // API Configuration for Physical AI & Humanoid Robotics Book
 
-// Get the API base URL from environment or default to relative path
+// Get the API base URL from global window variable or default to relative path
 const getApiBaseUrl = () => {
-  // Check if we're in a Node.js environment during build
-  if (typeof window === 'undefined') {
-    return '';
+  // Check if we're in a browser environment
+  if (typeof window !== 'undefined' && window.__API_BASE_URL__) {
+    return window.__API_BASE_URL__;
   }
 
-  // In browser, use the environment variable if available, otherwise use relative path
-  return process.env.REACT_APP_API_BASE_URL || '/api/v1';
+  // Fallback to default API path
+  return '/api/v1';
 };
 
 export const API_BASE_URL = getApiBaseUrl();
