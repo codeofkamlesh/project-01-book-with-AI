@@ -232,7 +232,8 @@
       "Bash(git clean -f -X nul)",
       "Bash(git reset HEAD .gitattributes .gitignore)",
       "Bash(git add .gitattributes .gitignore)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit -m \"Fix Git line ending issues and prevent tracking of Windows special files\n\n- Updated .gitattributes to properly handle line endings for various file types including .mjs, .cjs, and .sql files\n- Created comprehensive .gitignore to prevent tracking of Windows special files like ''nul''\n- Resolved ''LF will be replaced by CRLF'' warnings for .claude/settings.local.json and other files\n- Prevented Git from trying to track Windows device files like nul, con, prn, aux\n\nThis resolves the Git push issues related to line endings and special file tracking.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\")"
     ],
     "deny": [],
     "ask": []
