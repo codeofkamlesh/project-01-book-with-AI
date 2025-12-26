@@ -14,7 +14,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://codeofkamlesh.github.io',
+  url: 'https://codeofkamlesh.github.io/project-01-book-with-AI',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.NODE_ENV === 'production' ? '/project-01-book-with-AI/' : '/',
